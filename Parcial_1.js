@@ -5,7 +5,6 @@ function Indumentaria (id,stock,nombre,precio) {
     this.precio = precio;
 }
 
-
 function Camisa(id,stock,nombre,precio){
     Indumentaria.call(this,id,stock,nombre,precio);
 }
