@@ -26,6 +26,7 @@ const Tienda_Virtual = () => {
         const camisa = new Camisa(1,2,"Camisa",10);
         const pantalon = new Pantalon(2,2,"Pantalon",15);
         const zapatos = new Zapatos(3,2,"Zapatos",30);
+        return {camisa,pantalon,zapatos};
     }
     const carritoDeCompras = [];
     const agregarProducto = (producto) => {
@@ -46,8 +47,23 @@ const Tienda_Virtual = () => {
         prompt(`El total de su compra es: ${total}, Gracias por su compra`);
     }
     const actualizar_inventario = () => {
-        inventario.forEach(p => {
-            prompt("Inventario actualizado");
-        });
+        //inventario.forEach(p => {
+          //  console.log("Inventario actualizado");
+       // });
     }
+    return {inventario,agregarProducto,realizarPago,carritoDeCompras};
+}
+
+
+const camisa = new Camisa(1,2,"Camisa",10);
+const pantalon = new Pantalon(2,2,"Pantalon",15);
+const zapatos = new Zapatos(3,2,"Zapatos",30);
+const TV = Tienda_Virtual();
+TV.agregarProducto(camisa);
+TV.realizarPago();
+
+let AC = document.getElementById('AC');
+
+AC.onclick = function(e){
+    TV.agregarProducto(camisa);
 }
